@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+</head>
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/products}">Products</a></li>
+                        <li><a href="#" th:href="@{/product/new}">Create Product</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}">
+                            <form class="form-signout" th:action="@{/logout}" method="post">
+                                <button class="btn btn-sm btn-primary btn-block" type="submit">Sign out</button>
+                            </form>
+                        </li>
+                        <li th:if="!${#httpServletRequest.remoteUser}">
+                            <!-- Trigger the modal with a button -->
+                            <a href="#" data-toggle="modal" data-target="#myModal">Log in</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <div class="row text-center">
+                <div class="">
+                    <h2>Marantle</h2>
+
+                    <h3>Spring Boot Web App</h3>
+                </div>
+            </div>
+        </div>
+        <!--/*/ <th:block th:include="fragments/login_modal :: login_modal"></th:block> /*/-->
+    </div>
+</div>
+</body>
+</html>
