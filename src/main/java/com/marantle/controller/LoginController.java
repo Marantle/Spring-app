@@ -17,10 +17,6 @@ public class LoginController {
     @RequestMapping("/login")
     public String login(HttpServletRequest request,
                         HttpServletResponse response) {
-        System.out.println("jou1" + request.toString());
-        System.out.println("jou2" + request.getHeaderNames());
-        System.out.println("jou3" + request.getMethod());
-        System.out.println("jou4" + response.toString());
         return "login";
     }
 }

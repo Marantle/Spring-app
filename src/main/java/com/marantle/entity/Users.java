@@ -1,6 +1,9 @@
 package com.marantle.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Users {
@@ -11,9 +14,25 @@ public class Users {
     @Version
     private Integer version;
 
+    @NotNull
+    @NotEmpty
+    private String firstName;
+
+    @NotNull
+    @NotEmpty
     private String userName;
+
+    @NotNull
+    @NotEmpty
+    private String lastName;
+
+    @NotNull
+    @NotEmpty
     private String password;
-    private String salt;
+
+    @NotNull
+    @NotEmpty
+    private String email;
 
     public Integer getVersion() {
         return version;
@@ -31,12 +50,20 @@ public class Users {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -47,11 +74,19 @@ public class Users {
         this.password = password;
     }
 
-    public String getSalt() {
-        return salt;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

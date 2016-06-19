@@ -24,9 +24,11 @@ public class UsersLoader implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
         Users marko = new Users();
-        marko.setUserName("Marko");
-        marko.setPassword("Marko1");
-        marko.setSalt("suola");
+        marko.setFirstName("Marko");
+        marko.setLastName("Marko1");
+        marko.setUserName("Markonen");
+        marko.setPassword("suola");
+        marko.setEmail("hello@hello.com");
         usersRepository.save(marko);
 
         log.info("Saved marko - id: " + marko.getId());
