@@ -32,14 +32,15 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         plane.setProductId("235268845711068308");
         productRepository.save(plane);
         
-        log.info("Saved Shirt - id: " + plane.getId());
+        log.info("Saved plane - id: " + plane.getId());
 
         Product cycle = new Product();
         cycle.setDescription("A bicycle");
         cycle.setImageUrl("Bicycle.png");
         cycle.setProductId("168639393495335947");
         productRepository.save(cycle);
+
+        log.info("Saved cycle - id: " + cycle.getId());
         
-        log.info("Saved Mug - id:" + cycle.getId());
     }
 }
